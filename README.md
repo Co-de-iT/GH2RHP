@@ -1,13 +1,16 @@
 # GH definition to Rhino plugin (with interface)
 ![image](media/screenshot.png)
 
-This is an example  of how to wrap a Grasshopper definition as a Rhino plugin command, using [HumanUI](https://www.food4rhino.com/en/app/human-ui) to build an intuitive interface.
+This is an example  of how to wrap a Grasshopper definition as a Rhino plugin command, using [HumanUI](https://www.food4rhino.com/en/app/human-ui) to build an intuitive interface. You can use other plugins to build your UI, such as [UIPlus](https://www.food4rhino.com/en/app/ui) and/or [Synapse](https://www.food4rhino.com/en/app/synapse).
+
+> [!WARNING]
+> At the present moment (Rhino8 SR11, latest .NET version), HumanUI suffers from a conflict with UIPlus when they are installed together. If you intend to use HumanUI, do not install the other aforementioned UI plugins.
 
 This pipeline is motivated by ease of use, implementation and maintaining of certain workflows on both user and developer’s sides.
 
-The pipeline can be implemented in Rhino 7 (compiling with the Rhino Script Compiler) or Rhino 8+ (using the new ScriptEditor). Note that the Rhino Script Compiler only allows Python scripts, Rhinoscript or Grasshopper (no C#).
+The pipeline can be implemented in Rhino 7 (compiling with the Rhino Script Compiler) or Rhino 8 (compiling with the Rhino Script Compiler or using the new ScriptEditor). Note that the Rhino Script Compiler only allows Python scripts, Rhinoscript or Grasshopper (no C#).
 
-The gist of it is to use a launch command (you can write it in Python or C#) to run a headless GH definition where you can setup the interface using HumanUI. The launch command:
+The gist of it is to use a launch command (you can write it in Python or C#) to run a headless GH definition where you can setup the interface using your preferred UI plugin for GH (this example uses HumanUI). The launch command:
 
 - launches GH (hiding the window and load process)
 - shows the GH Remote Control Panel (RCP)
@@ -84,7 +87,7 @@ In File > Document Properties, tick the “Keep on after command completes” op
 - The rest of the definition can be to your liking, using the HumanUI components to build an interface and interact with the model. See the included example for details.
 - It is strongly suggested to include an “Exit” True Button that disables the previews and closes the UI window (otherwise they stay persistent after you close it). See the included example for details.
 
-# ScriptEditor (Rhino 8+)
+# ScriptEditor (Rhino 8)
 
 In Rhino8 type ScriptEditor, then:
 
@@ -101,7 +104,7 @@ Check the project file included as an example.
 
 For more comprehensive step-by-step info, check the [Official Rhino Scripting Guides](https://developer.rhino3d.com/en/guides/scripting/).
 
-# Script Compiler (Rhino 7)
+# Script Compiler (Rhino 7-8)
 
 - go to `C:\Program Files\Rhino 7\System` and double click on `RhinoScriptCompiler.exe`
 
