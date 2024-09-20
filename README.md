@@ -85,7 +85,8 @@ In File > Document Properties, tick the “Keep on after command completes” op
 - The GH definition must contain at least one of these GrasshopperPlayer components: `ContextBake` or `ContextPrint`
 - Although the RCP must be called by the launcher command for the GH command to persist, it is not necessary to push anything to it (it can stay empty, as long as it shows up)
 - The rest of the definition can be to your liking, using the HumanUI components to build an interface and interact with the model. See the included example for details.
-- It is strongly suggested to include an “Exit” True Button that disables the previews and closes the UI window (otherwise they stay persistent after you close it). See the included example for details.
+>[!TIP]
+> It is strongly suggested to include an “Exit” True Button that disables the previews and closes the UI window (otherwise previews stay persistent after you close the UI). See the included example for details.
 
 # ScriptEditor (Rhino 8)
 
@@ -136,7 +137,7 @@ For example, here are the Plugin settings:
 When you’re ready, hit B to Build the project, and the compiler will produce a .rhp file and a .yak package. To distribute the .yak for the Package Manager, see the [Package Manager Guides](https://developer.rhino3d.com/guides/yak/).
 
 # Test the example
-Drag and drop the included .rhp file in the src folder, then type `launch`
+Drag and drop the .rhp file (included in the src folder) into an open Rhino window, then type `launch`
 
 ---
 
