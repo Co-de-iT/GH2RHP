@@ -78,7 +78,7 @@ rs.Command("GHdefName ")
 
 # GH definition
 
-In File > Document Properties, tick the “Keep on after command completes” option:
+There are .gh example files for HumanUI, Synapse and UIPlus. Once you pick the one you need, in File > Document Properties, tick the “Keep on after command completes” option:
 
 ![image.png](media/image.png)
 
